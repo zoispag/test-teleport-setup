@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+jobs:
+  demo-auth:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - name: Install Teleport
+        uses: teleport-actions/setup@v1
+        with:
+          version: 14.0.0
+      - run: which tctl
